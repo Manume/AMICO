@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>AMICO keep in touch with your friends</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+	    <%= render 'layouts/header'%>
+      
+		<p class="notice"><%= notice %></p>
+		<p class="alert"><%= alert %></p>
+	    <%= yield %>
+	    <%= render 'layouts/footer'%>
+    </div>
+    <div class="col-md-2"></div>
+  </div>	
+</body>
+</html>

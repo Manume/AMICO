@@ -1,0 +1,70 @@
+// Place all the styles related to the status_updates controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+#notsignin{
+	background: url(8.jpg);
+	display: none;
+	height: 200px;
+	color: blue;
+	text-align: center;
+	font-size: 30px;
+	padding: 20px;
+	margin-tp: auto;
+}
+.backgroun1{
+	background: url(8.jpg);
+	height: 600px;
+}
+.welcome{
+
+
+    h1{
+    color: black;
+    text-align: center;
+    font-size: 55px;
+    font-family: Times New Roman, serif;
+    }
+	article{
+	  h3{
+	  color: 	#FF19FF;
+	  }
+	  p{
+	   color: 	white;
+	   font-size: 15px;
+	   font-style: italic;
+	  }
+	}
+}
+.signup{
+padding: 30px;
+
+	center{
+		font-size: 20px;
+		padding: 10px;
+	}
+}
+.pro{
+	color: #18191A;
+}
+
+.slider1{
+	padding-top: 100px;
+}
+.top{
+	
+	text-align: center;
+	background: url(images.jpeg);
+	h2{
+	  color: #00FFFF;
+	  font-size: 55px;
+      font-family: Times New Roman, serif;
+	}
+	.pull-right{
+	  p{
+	  	margin-right: 100px;
+	  }
+	}
+	
+}
+
+

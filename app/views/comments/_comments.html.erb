@@ -1,0 +1,16 @@
+
+<h4><%= @comments.count%><i>comments</i></h4>
+<% @comments.each do |comment|%>
+	<blockquote>
+		<p><%= comment.user.first_name%></p>
+		<p><%= comment.content%></p>
+		<p><%= l(comment.created_at, format: ' %d-%m-%Y %H:%M:%S') %></p>
+		<br>
+		<%= link_to "show",[@commentable, comment]%> 
+		 <%= link_to "Destroy", [@commentable, comment], method: :delete, data: { confirm: 'Are you sure?' } if current_user.id == comment.user.id%> 
+		  <%= link_to 'Edit', [:edit, @commentable, comment] if current_user.id == comment.user.id%>
+	</blockquote> 
+	 
+
+
+<%end%>

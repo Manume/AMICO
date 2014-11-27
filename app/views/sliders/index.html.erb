@@ -1,0 +1,27 @@
+<h1>Listing sliders</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Slider image</th>
+      <th>Caption</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @sliders.each do |slider| %>
+      <tr>
+        <td><%= slider.slider_image %></td>
+        <td><%= slider.caption %></td>
+        <td><%= link_to 'Show', slider %></td>
+        <td><%= link_to 'Edit', edit_slider_path(slider) %></td>
+        <td><%= link_to 'Destroy', slider, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Slider', new_slider_path %>

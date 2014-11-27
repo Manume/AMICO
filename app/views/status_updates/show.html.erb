@@ -1,0 +1,39 @@
+<div class="row">
+  <%= render 'layouts/special'%>
+  	<p id="notice"><%= notice %></p>
+	<blockquote class="well">
+	<p><%= @status_update.user.first_name%></p>
+	  <%= @status_update.post %><br>
+	  <% if user_signed_in? %>
+	  <span class="glyphicon glyphicon-thumbs-up"></span><%= @status_update.get_likes.size %>
+	  <% if current_user.liked? @status_update %>
+	      <%= link_to "Dislike", dislike_status_update_path(@status_update), class: 'vote', method: :put %>
+	  <% else %>
+	      <%= link_to "Like", like_status_update_path(@status_update), class: 'vote', method: :put %>
+	  <% end %>	 
+	<%end%>
+	<% if current_user.id == @status_update.user.id %>
+	|<%= link_to 'Edit', edit_status_update_path(@status_update) %>
+	<%end%>|
+	<%= link_to 'Back', status_updates_path %>|
+	<%= time_ago_in_words(@status_update.created_at) %> ago
+	</blockquote> 
+	
+
+
+	 <% if user_signed_in? %>
+	 <h4><i> people who like this</i></h4>
+	 <% @users.each do |user|%>
+		<% if user.liked? @status_update%>
+		  <p><%= user.first_name%></p>
+		<%end%>
+	 <%end%>
+	<% end %>
+
+	<%= render 'comments/form'%>
+	<%= render 'comments/comments'%>
+	
+  </div>
+  
+
+

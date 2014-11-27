@@ -1,0 +1,25 @@
+<%= form_for(@status_update) do |f| %>
+  <% if @status_update.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@status_update.errors.count, "error") %> prohibited this status_update from being saved:</h2>
+
+      <ul>
+      <% @status_update.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="input-group input-group-lg">
+       <span class="input-group-addon "> <%= image_tag current_user.profile_pic_url(:thumb) if user_signed_in?%></span>      
+       <%= f.text_area :post,class: "form-control",placeholder: "Post your Status................!"%>
+       </div>
+       <%= f.hidden_field :user_id %>
+<br/>
+  <div class="actions">
+    <%= f.submit "post", class: "btn btn-primary" %> or <%= link_to 'Add-photo' , new_photo_path, :class=> "btn btn-info"%><br/>
+  </div>
+<% end %>
+
+ 

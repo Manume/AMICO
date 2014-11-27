@@ -1,0 +1,36 @@
+<%= render 'layouts/special'%>
+<div class="row">
+  
+    <p id="notice"><%= notice %></p>
+    <p><%= @photo.user.first_name%></p>
+    <p>      
+      <%= @photo.caption %>
+    </p>
+    <p>      
+      <%= image_tag @photo.image_url(:thumb) ,class: "img-responsive"%>
+    </p>
+    <span class="glyphicon glyphicon-thumbs-up"></span><%= @photo.get_likes.size %>
+    <% if user_signed_in? %>
+      <% if current_user.liked? @photo %>
+          <%= link_to "Dislike", dislike_photo_path(@photo), class: 'vote', method: :put %>
+      <% else %>
+          <%= link_to "Like", like_photo_path(@photo), class: 'vote', method: :put %>
+      <% end %>
+     <%#= @photo.get_likes.size %>     
+    <% if current_user.id == @photo.user.id %>
+    <%= link_to 'Edit', edit_photo_path(@photo) %> |
+    <%end%>
+    <%= link_to 'Back', status_updates_path %>|
+    <%= time_ago_in_words(@photo.created_at) %> ago
+    <br/>    
+      people like this
+     <% @users.each do |user|%>
+    	<% if user.liked? @photo%>
+    	  <p><%= user.first_name%></p>
+    	<%end%>
+     <%end%>
+    <% end %>
+    <%= render 'comments/comments'%>
+    <%= render 'comments/form'%>
+
+</div>

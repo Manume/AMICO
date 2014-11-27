@@ -1,0 +1,112 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+@import "bootstrap-sprockets";
+@import "bootstrap";
+/*  body{
+	background: url(88.jpg);
+	repeat: no-repeat;
+	color:white;
+}
+*/
+.yellow{
+	background: linear-gradient(to right, #BFC4C7 , #CFD4D7);
+	border-radius: 35px;
+}
+
+
+.bottem{
+	border-radius: 35px;
+	background-color: #30aadc;
+	height: 150px;
+	text-align: center;
+	padding-top:50px;
+	color:white;
+}
+
+.navbar-default{
+	background-color: #30aadc;
+	border-radius: 35px;
+	padding:10px;
+    border-color: #d65c14;
+}
+
+.welcome{
+	color: white;
+	   text-shadow: 1px 1px 1px #000, 
+               3px 3px 5px blue;
+	  font-size: 55px;
+      font-family: Times New Roman, serif;
+	text-align:center;
+	font-size: 50px;
+
+}
+
+.navbar-default .navbar-brand {
+    color: #18191a;
+}
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+    color: #8a0e0b;
+}
+.navbar-default .navbar-nav > li > a {
+    color: white;
+}
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+    color: white;
+    background-color: #2183ab;
+}
+.navbar-default .navbar-nav > .active > a, 
+.navbar-default .navbar-nav > .active > a:hover, 
+.navbar-default .navbar-nav > .active > a:focus {
+    color: #8a0e0b;
+    background-color: blue;
+}
+.navbar-default .navbar-nav > .open > a, 
+.navbar-default .navbar-nav > .open > a:hover, 
+.navbar-default .navbar-nav > .open > a:focus {
+    color: #8a0e0b;
+    background-color: #d65c14;
+}
+.navbar-default .navbar-nav > .dropdown > a .caret {
+    border-top-color: #ffffff;
+    border-bottom-color: #ffffff;
+}
+.navbar-default .navbar-nav > .dropdown > a:hover .caret,
+.navbar-default .navbar-nav > .dropdown > a:focus .caret {
+    border-top-color: #8a0e0b;
+    border-bottom-color: #8a0e0b;
+}
+.navbar-default .navbar-nav > .open > a .caret, 
+.navbar-default .navbar-nav > .open > a:hover .caret, 
+.navbar-default .navbar-nav > .open > a:focus .caret {
+    border-top-color: #8a0e0b;
+    border-bottom-color: #8a0e0b;
+}
+.navbar-default .navbar-toggle {
+    border-color: #d65c14;
+}
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+    background-color: #d65c14;
+}
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: #ffffff;
+}
+.qutesfront{
+    background:url(100+friendship-Quotes.jpg);
+   
+}

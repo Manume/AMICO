@@ -1,0 +1,32 @@
+
+<%= render 'layouts/special'%>
+<%= render 'form' %><br>
+<div class="row">
+  
+    <center><i><h1 style="color: green;">feedbacks</h1></i></center>
+    <% @feedbacks.each do |feedback| %>  
+        <h4 style="color: blue"><%= feedback.name %></h4>
+        <blockquote>          
+          <h4><%= feedback.comment %></h4>
+        </blockquote>    
+        
+        
+        <%#= link_to 'Show', feedback %>
+        <%#= link_to 'Edit', edit_feedback_path(feedback) %>
+        <%#= link_to 'Destroy', feedback, method: :delete, data: { confirm: 'Are you sure?' } %>      
+    <% end %>
+    <center><%= will_paginate @feedbacks%></center>
+  
+</div>
+
+<%#= render 'layouts/special'%>
+
+
+
+
+
+
+
+
+    
+ 

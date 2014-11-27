@@ -1,0 +1,12 @@
+<%= form_for [@commentable,@comment] do |f|%>
+  <div class="input-group input-group-md">
+       <span class="input-group-addon "> <%= image_tag current_user.profile_pic_url(:thumb) if user_signed_in?%></span>      
+       <%= f.text_area :content,class: "form-control"%>
+       </div> <br/>
+       <p><%= f.hidden_field :user_id %></p>
+   
+  <p><%= f.submit "Add-comment", class: "btn btn-info"%></p>
+<%end%>
+
+
+

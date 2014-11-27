@@ -1,0 +1,69 @@
+
+<% unless user_signed_in? %>  
+  <%= render 'main'%>
+<%end%>
+<div class="row">  
+  <div class="col-md-6">    
+  
+
+<% if user_signed_in? %>
+<%= render 'layouts/special'%>
+<%= render 'form' %>   
+    <% @status_updates.each do |status_update| %>      
+        <blockquote>
+        <h4 style="color: blue"><%= status_update.user.first_name%></h4> 
+          <%= status_update.post %><br/>
+        
+                 
+        <span class="glyphicon glyphicon-thumbs-up"></span><%= status_update.get_likes.size %> 
+          <% if current_user.liked? status_update %>
+              <%= link_to "Dislike", dislike_status_update_path(status_update), class: 'vote', method: :put %>
+          <% else %>
+              <%= link_to "Like", like_status_update_path(status_update), class: 'vote', method: :put %>
+          <% end %>          
+         
+        <%#= time_ago_in_words(Time.now.in_time_zone("Eastern Time (US & Canada)")) %>
+           
+        <%= link_to 'Comment', status_update %>        
+        <%= link_to 'Edit', edit_status_update_path(status_update) if current_user.id == status_update.user.id%>
+        <%= link_to 'Remove', status_update, method: :delete, data: { confirm: 'Are you sure?' } if current_user.id == status_update.user.id%>
+        <p><%= time_ago_in_words(status_update.created_at) %> ago</p>
+      </blockquote>   
+       <% end %>
+      <center><%= will_paginate @status_updates%></center>
+    </div>
+    <div class="col-md-6">
+    
+    <% @photos.each do |photo| %><br/>
+        <h4 style="color: blue"><%= photo.user.first_name%></h4>  
+        <p><%= photo.caption %></p>
+        <p><%= link_to image_tag(photo.image_url(:thumb),class: "img-responsive"),photo %></p>
+        <%#= link_to 'Comment', photo %>
+        <span class="glyphicon glyphicon-thumbs-up"></span><%= photo.get_likes.size %>
+        <% if user_signed_in? %>
+          <% if current_user.liked? photo %>
+              <%= link_to "Dislike", dislike_photo_path(photo), class: 'vote', method: :put %>
+          <% else %>
+              <%= link_to "Like", like_photo_path(photo), class: 'vote', method: :put %>
+          <% end %>
+          <%#= photo.get_likes.size %>  
+        <% end %>
+        <%= link_to 'Comment', photo %>
+        <%= link_to 'Edit', edit_photo_path(photo) if current_user.id == photo.user.id%>
+        <%= link_to 'Remove', photo, method: :delete, data: { confirm: 'Are you sure?' } if current_user.id == photo.user.id%>
+        <%= time_ago_in_words(photo.created_at) %> ago
+       <% end %>      
+       <center><%= will_paginate @photos%></center>   
+    <%end%>
+<br>
+
+<%#= link_to 'New Photo', new_photo_path %>
+
+</div>
+</div>
+
+
+
+
+
+<%#= link_to 'New Status update', new_status_update_path %>

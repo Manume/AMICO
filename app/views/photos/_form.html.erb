@@ -1,0 +1,34 @@
+<div class="row">
+  
+    <%= form_for(@photo) do |f| %>
+      <% if @photo.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@photo.errors.count, "error") %> prohibited this photo from being saved:</h2>
+
+          <ul>
+          <% @photo.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+          </ul>
+        </div>
+      <% end %>
+      <div class="input-group input-group-lg">
+       <span class="input-group-addon "> <span class="glyphicon glyphicon-folder-open"></span></span>
+        
+        <%= f.text_area :caption,class: "form-control",placeholder: "Caption" %>
+      </div> <br /> 
+
+      <div class="field">
+        <span class="glyphicon glyphicon-picture"></span><%= f.label :image %><br>
+        <%= f.file_field :image %>
+      </div>      
+      <%= f.hidden_field :user_id %>
+      <div class="actions">
+        <center><%= f.submit class: "btn btn-info"%><%= link_to 'Back', status_updates_path, class: "btn btn-info pull-right"%></center>
+      </div>
+    <% end %>
+    
+  
+  </div>
+
+
