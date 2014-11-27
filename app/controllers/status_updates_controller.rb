@@ -24,7 +24,7 @@ class StatusUpdatesController < ApplicationController
     @photos = Photo.paginate(:page => params[:page], :per_page => 3).order("created_at desc")
      @status_update = StatusUpdate.new
      @posts = Post.all
-     @sliders = Slider.all
+     
   end
 
   # GET /status_updates/1
