@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   resources :sliders
 
-  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+  mount RailsAdmin::Engine => '/manume9633637705', as: 'rails_admin'
   get 'comments/index'
 
   get 'comments/new'
