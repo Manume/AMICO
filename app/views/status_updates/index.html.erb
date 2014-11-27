@@ -8,7 +8,7 @@
 
 <% if user_signed_in? %>
 <%= render 'layouts/special'%>
-<%= render 'form' %>   
+<%#= render 'form' %>   
     <% @status_updates.each do |status_update| %>      
         <blockquote>
         <h4 style="color: blue"><%= status_update.user.first_name%></h4> 

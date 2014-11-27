@@ -22,7 +22,7 @@ class StatusUpdatesController < ApplicationController
     @status_updates = StatusUpdate.paginate(:page => params[:page], :per_page => 4).order("created_at desc")
 
     @photos = Photo.paginate(:page => params[:page], :per_page => 3).order("created_at desc")
-     @status_update = StatusUpdate.new
+     
      @posts = Post.all
      
   end
