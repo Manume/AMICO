@@ -40,6 +40,8 @@ gem 'spring',        group: :development
 gem 'devise'
 gem 'bootstrap-sass'
 gem 'carrierwave'
+gem "fog", "~> 1.3.1"
+gem 'carrierwave_direct'
 gem 'rmagick'
 gem 'acts_as_votable'
 gem 'rails_admin'

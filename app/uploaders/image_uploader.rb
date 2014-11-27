@@ -7,7 +7,9 @@ include CarrierWave::RMagick
   # include CarrierWave::MiniMagick
 
   # Choose what kind of storage to use for this uploader:
-  storage :file
+   include CarrierWave::MimeTypes
+  process :set_content_type
+   storage :fog
   # storage :fog
 
   # Override the directory where uploaded files will be stored.
